@@ -385,7 +385,7 @@ export default class Home extends Component {
                                 </div>
                             </div>
                         </div>
-                        {/* <h1>Thinkord</h1><br />
+                         <h1>Thinkord</h1><br />
 
                         <div className="user_login"><button><img src={UserLoginIcon}></img></button>Login</div>
 
@@ -407,8 +407,8 @@ export default class Home extends Component {
                             >
                                 <i className="fas fa-chevron-circle-down"></i>
                             </button>
-                        </h2><br /> */}
-                        {/* <div className="pop_trigger">
+                        </h2><br /> 
+                         <div className="pop_trigger">
                             {this.state.collections.map((file) => {
                                 if (this.state.collections.indexOf(file) < 10) {
                                     return <FileButton
@@ -419,7 +419,7 @@ export default class Home extends Component {
                                     ></FileButton>
                                 }
                             })}
-                        </div> */}
+                        </div> 
                     </div>
                     <div className="content_inner" hidden={this.state.help_page}>
                         <h1>Help</h1>

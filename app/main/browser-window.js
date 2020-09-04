@@ -14,8 +14,8 @@ exports.setControlBarPosition = (size) => {
 
 exports.createControlBarWindow = (controlbarWin) => {
     controlbarWin = new BrowserWindow({
-        width: 292,
-        height: 41,
+        // width: 292,
+        // height: 80,
         frame: false,
         resizable: true,
         x: controlbar_x,
@@ -23,8 +23,19 @@ exports.createControlBarWindow = (controlbarWin) => {
         webPreferences: {
             nodeIntegration: true
         },
-        show: false
+        show: false,
+        hasShadow: false,
+        transparent: true,
     })
+    // const win = require('electron').remote.getCurrentWindow()
+
+    // const el = document.getElementById('root')
+    // el.addEventListener('mouseenter', () => {
+    //     win.setIgnoreMouseEvents(true, { forward: true })
+    // })
+    // el.addEventListener('mouseleave', () => {
+    //     win.setIgnoreMouseEvents(false)
+    // })
 
     controlbarWin.once('closed', () => {
         controlbarWin = null;

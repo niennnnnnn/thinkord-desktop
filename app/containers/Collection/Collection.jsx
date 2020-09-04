@@ -6,7 +6,9 @@ import Header from "./Header/Header";
 import WindowTitlebar from '../../components/WindowTitlebar/WindowTitlebar';
 import NavigationBar from './NavigationBar/NavigationBar';
 import ExportModal from './ExportModal/ExportModal';
+import SearchButton from '../../components/SearchButton/SearchButton';
 import './collection.scss';
+import '../Home/home.scss';
 
 // ELectron module
 import { ipcRenderer } from "electron";
@@ -109,10 +111,24 @@ class Collection extends Component {
   render() {
     return (
       <BlockUi tag="div" blocking={!this.state.saveSign} >
-      <WindowTitlebar docTitle={this.state.title}/>
+        <WindowTitlebar docTitle={this.state.title} />
         <div className="app" id="app">
           <div className="page-content" id="content">
-            <Header title={this.state.title} handleTitle={this.handleTitle} />
+            {/* <Header title={this.state.title} handleTitle={this.handleTitle} /> */}
+            <header className="home_header"
+              style={{
+                padding: '40px 30px',
+                border: '3px red solid'
+            }}
+            >
+              <h1 className="title">{this.state.title}</h1>
+              <div className="controls">
+                <SearchButton onSearchChange={this.handleSearchClick} />
+                <i className="fas fa-plus-circle fa-lg"></i>
+                <img className="user"
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ3f_mCLpkLWSbUPVBMkI1-ZUUFP-dqFeFGUCDOc1lzuWUQxROe&usqp=CAU" />
+              </div>
+            </header>
             {/* <div><Progressbar /></div> */}
             <Block
               onNewBlock={this.scrollToBottom}

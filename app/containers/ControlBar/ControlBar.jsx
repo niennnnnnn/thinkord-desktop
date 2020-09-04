@@ -42,6 +42,16 @@ export default class ControlBar extends Component {
         ipcRenderer.on('Ctrl+Shift+s', () => {
             this.handleStart();
         });
+        // console.log('componentDidMount!!!!!!!');
+        // console.log(this);
+        // const win = require('electron').remote.getCurrentWindow()
+        // const el = document.getElementById('root')
+        // el.addEventListener('mouseenter', () => {
+        //     // win.setIgnoreMouseEvents(true, { forward: true })
+        // })
+        // el.addEventListener('mouseleave', () => {
+        //     // win.setIgnoreMouseEvents(false)
+        // })
     }
 
     //start to record the note
@@ -166,6 +176,15 @@ export default class ControlBar extends Component {
     render() {
         return (
             <div className="bar-container">
+                <div style={{
+                    // border: '3px red solid',
+                    borderRadius: '100%',
+                    height: '40px',
+                    width: '40px',
+                    marginLeft: '5px',
+                    backgroundColor: '#35C189',
+                }}>
+                </div>
                 {this.state.controlbar_button.map(button =>
                     <ControlBarButton
                         key={button.id}
